@@ -57,4 +57,23 @@
 - **R.FP.4** - Software busca e retorna ocorrências das espécies da segunda lista de acordo com GBIF e SL.(Dados: similares à primeira lista, mas com informações de localização e datas).
 
 ## 4. Protótipo 
-<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F7nvyNYGvlfMLzGFUBywQFP%2FTaxon-Hub%3Fnode-id%3D0%253A1" allowfullscreen></iframe>
+- **R.P.1** -  Página principal
+<p align="center">
+    <img src="docs/arquitetura.png" />
+</p>
+
+- **R.P.2** -  Página de listagem da busca Taxonômica / Download de resultados
+<p align="center">
+    <img src="docs/arquitetura.png" />
+</p>
+
+- **R.P.3** -  Página de criação da pesquisa Taxonômica/Busca de Ocorrências
+<p align="center">
+    <img src="docs/arquitetura.png" />
+</p>
+
+- **R.P.4** -   Página de listagem de espécies cadastradas
+<p align="center">
+    <img src="docs/arquitetura.png" />
+</p>
+
