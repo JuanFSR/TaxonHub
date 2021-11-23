@@ -1,10 +1,10 @@
 <h1 align="center">
   <br>
- 	Teste para desenvolvedor junior
+ 	Taxon Hub
   <br>
 </h1>
 
-<h4 align="center">Viptech</h4>
+<h4 align="center">UTFPR - Campo Mourão</h4>
 
 <p align="center">
   <a href="https://nodejs.org/">
