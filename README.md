@@ -12,7 +12,7 @@
          alt="Node.js">
           </a>
   <a href="https://www.postgresql.org/">
-    <img src="https://img.shields.io/badge/PostgreSQL-13.4-008bb9?style=for-the-badge&logo=PostgreSQL"
+    <img src="https://img.shields.io/badge/SQLite-3.36.0-008bb9?style=for-the-badge&logo=PostgreSQL"
          alt="PostgreSQL">
           </a>
     
