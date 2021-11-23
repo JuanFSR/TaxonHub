@@ -11,8 +11,8 @@
     <img src="https://img.shields.io/badge/Node.js-16.13.0-3895D?style=for-the-badge&logo=Node.js"
          alt="Node.js">
           </a>
-  <a href="https://www.postgresql.org/">
-    <img src="https://img.shields.io/badge/SQLite-3.36.0-008bb9?style=for-the-badge&logo=PostgreSQL"
+  <a href="https://www.sqlite.org/">
+    <img src="https://img.shields.io/badge/SQLite-3.36.0-008bb9?style=for-the-badge&logo=SQLite"
          alt="PostgreSQL">
           </a>
     
