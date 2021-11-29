@@ -7,6 +7,9 @@ export class GBIFSpeciesEntity {
   id: string
 
   @typeorm.Column()
+  usageKey: number
+
+  @typeorm.Column()
   scientificName: string
 
   @typeorm.Column()
