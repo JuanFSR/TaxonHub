@@ -82,6 +82,7 @@
     }
   },
   "dependencies": {
+    "axios": "^0.24.0",
     "reflect-metadata": "^0.1.13",
     "sqlite3": "^5.0.2",
     "typeorm": "^0.2.41"
