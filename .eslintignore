@@ -1,3 +1,4 @@
 eslintrc.js 
 babel.config.js 
 commitlist.config.js
+jest.config.js
