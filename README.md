@@ -17,3 +17,26 @@
           </a>
     
 </p>
+
+
+## Descrição
+O TaxonHub é um coletor de informações sobre espécies da flora, tendo seus dados extraídos dos seguintes sites:
+
+* Flora do Brasil (http://floradobrasil.jbrj.gov.br/)
+* The Plant List (http://www.theplantlist.org/)
+* GBIF (https://www.gbif.org/)
+* SpeciesLink (http://www.splink.org.br/)
+
+## Funcionalidades
+
+* Obter dados taxonômicos da espécie a partir de uma lista disponibilizada pelo pesquisador
+* Obter ocorrências registradas de determinadas espécies a partir de uma lista disponibilizada pelo pesquisador
+* Editar as listas manualmente, removendo dados indesejados
+* Realizar download das listas de resultados em um arquivo .csv
+
+
+## Protótipo
+
+https://www.figma.com/file/7nvyNYGvlfMLzGFUBywQFP/?node-id=0%3A1
+
+
