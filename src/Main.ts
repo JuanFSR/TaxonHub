@@ -17,4 +17,4 @@ export function connected(): boolean {
 
 let floraBrasil : FloraBrasilService = new FloraBrasilService;
 
-floraBrasil.consultTaxonomicData();
+floraBrasil.consultTaxonomicData('Eichhornia%20azurea');
