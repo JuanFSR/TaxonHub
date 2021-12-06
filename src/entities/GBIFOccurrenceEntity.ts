@@ -148,7 +148,7 @@ export class GBIFOccurrenceEntity {
   identifier: string
 
   @typeorm.Column()
-  'http://unknown.org/nick': String
+  'http://unknown.org/nick': string
 
   @typeorm.Column()
   verbatimEventDate: string
