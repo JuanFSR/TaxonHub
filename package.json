@@ -2,8 +2,8 @@
   "name": "taxonhub",
   "version": "1.0.0",
   "description": "<h1 align=\"center\">   <br>  \tTaxon Hub   <br> </h1>",
-  "main": "dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "dist/Main.js",
+  "types": "./dist/Main.d.ts",
   "type": "commonjs",
   "directories": {
     "doc": "docs"
@@ -51,26 +51,6 @@
     "url": "https://github.com/JuanFSR/TaxonHub/issues"
   },
   "homepage": "https://github.com/JuanFSR/TaxonHub#readme",
-  "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "json",
-      "ts"
-    ],
-    "rootDir": "./",
-    "modulePaths": [
-      "<rootDir>"
-    ],
-    "testRegex": ".*\\.spec\\.ts$",
-    "transform": {
-      "^.+\\.(t|j)s$": "ts-jest"
-    },
-    "collectCoverageFrom": [
-      "**/*.(t|j)s"
-    ],
-    "coverageDirectory": "../coverage",
-    "testEnvironment": "node"
-  },
   "lint-staged": {
     "*.{js, jsx}": [
       "prettier --write"

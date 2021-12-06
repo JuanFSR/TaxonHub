@@ -7,4 +7,21 @@ module.exports = {
   transform: {
     "^.+\\.(ts|tsx)$": "ts-jest"
   },
+  moduleFileExtensions: [
+    "js",
+    "json",
+    "ts"
+  ],
+  rootDir: "./",
+  modulePaths: [
+    "<rootDir>"
+  ],
+  transform: {
+    "^.+\\.(t|j)s$": "ts-jest"
+  },
+  collectCoverageFrom: [
+    "**/*.(t|j)s"
+  ],
+  coverageDirectory: "../coverage",
+  testEnvironment: "node"
 }
