@@ -9,10 +9,15 @@
     "doc": "docs"
   },
   "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-typescript": "^7.16.0",
     "@types/jest": "^27.0.3",
     "@types/node": "^16.11.10",
+    "@types/papaparse": "^5.3.1",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
+    "babel-jest": "^27.4.2",
     "babel-plugin-transform-typescript-metadata": "^0.3.2",
     "eslint": "^8.3.0",
     "eslint-config-prettier": "^8.3.0",
@@ -51,26 +56,6 @@
     "url": "https://github.com/JuanFSR/TaxonHub/issues"
   },
   "homepage": "https://github.com/JuanFSR/TaxonHub#readme",
-  "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "json",
-      "ts"
-    ],
-    "rootDir": "./",
-    "modulePaths": [
-      "<rootDir>"
-    ],
-    "testRegex": ".*\\.spec\\.ts$",
-    "transform": {
-      "^.+\\.(t|j)s$": "ts-jest"
-    },
-    "collectCoverageFrom": [
-      "**/*.(t|j)s"
-    ],
-    "coverageDirectory": "../coverage",
-    "testEnvironment": "node"
-  },
   "lint-staged": {
     "*.{js, jsx}": [
       "prettier --write"

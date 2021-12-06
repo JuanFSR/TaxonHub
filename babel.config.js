@@ -1,4 +1,8 @@
-return {        
+return {       
+    presets: [
+      ['@babel/preset-env', {targets: {node: 'current'}}],
+      '@babel/preset-typescript',
+    ], 
     plugins: [
         'babel-plugin-transform-typescript-metadata',
     ]

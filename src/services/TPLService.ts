@@ -1,4 +1,5 @@
 import axios from 'axios'
+import papaparse from 'papaparse'
 
 export class TPLService {
   static TPLUrl = 'http://www.theplantlist.org'
@@ -22,6 +23,24 @@ export class TPLService {
         }
       })
 
-    return result
+    return result.data
+  }
+
+  static parseData(sepeciesData: any): any {
+    try {
+      const parsedData = papaparse.parse(sepeciesData, {
+        header: true,
+        dynamicTyping: true,
+        skipEmptyLines: true,
+      })
+
+      if (parsedData?.errors.length !== 0) {
+        throw new Error('Incorrect CSV')
+      } else {
+        return parsedData.data
+      }
+    } catch (error) {
+      throw new Error(`Parsing data error: ${error}`)
+    }
   }
 }
