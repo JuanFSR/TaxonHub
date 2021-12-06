@@ -83,6 +83,8 @@
   },
   "dependencies": {
     "axios": "^0.24.0",
+    "cheerio": "^1.0.0-rc.10",
+    "papaparse": "^5.3.1",
     "reflect-metadata": "^0.1.13",
     "sqlite3": "^5.0.2",
     "typeorm": "^0.2.41"
