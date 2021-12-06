@@ -4,7 +4,7 @@ import papaparse from 'papaparse'
 export class TPLService {
   static TPLUrl = 'http://www.theplantlist.org'
 
-  static async getSearchData(speciesName: string): Promise<any> {
+  static async getSearchData(speciesName: string): Promise<string> {
     const result = await axios
       .get(`${TPLService.TPLUrl}/tpl1.1/search`, {
         params: {
@@ -26,7 +26,7 @@ export class TPLService {
     return result.data
   }
 
-  static parseData(sepeciesData: any): any {
+  static parseData(sepeciesData: string): any {
     try {
       const parsedData = papaparse.parse(sepeciesData, {
         header: true,
