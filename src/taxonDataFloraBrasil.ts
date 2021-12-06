@@ -1,6 +1,6 @@
 import { FloraResponse } from "./floraResponse";
 
-export class consultTaxonomicData {
+export class TaxonomicData {
     name: string;
     nameAuthor: string;
     binomialSynonymFlora: Array<FloraResponse>;
@@ -9,6 +9,7 @@ export class consultTaxonomicData {
         // Initializing object
         this.name = floraBrasilResponse.name;
         this.nameAuthor = floraBrasilResponse.nameAuthor;
+        this.binomialSynonymFlora = new Array();
     }
 
 }
