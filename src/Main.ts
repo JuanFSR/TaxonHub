@@ -1,4 +1,4 @@
-import { FloraBrasilService } from './services/flora-brasil.service'
+import { consultTaxonomicData, taxonCleanData } from './services/flora-brasil.service'
 import 'reflect-metadata'
 import { createConnection, Connection } from 'typeorm'
 import { TaxonomicData } from './taxonDataFloraBrasil'
@@ -16,8 +16,11 @@ export function connected(): boolean {
   return typeof _connection !== undefined
 }
 
-let floraBrasil : FloraBrasilService = new FloraBrasilService;
+// let floraBrasil : FloraBrasilService = new FloraBrasilService;
+let nameSpecies: string = 'Eichhornia%20azurea';
 
-floraBrasil.consultTaxonomicData('Eichhornia%20azurea', (floraDataResponse : TaxonomicData) => {
-  console.log(floraDataResponse);
-});
+// floraBrasil.consultTaxonomicData('Eichhornia%20azurea', (floraDataResponse : TaxonomicData) => {
+//   console.log(floraDataResponse);
+// });
+
+consultTaxonomicData(nameSpecies);
