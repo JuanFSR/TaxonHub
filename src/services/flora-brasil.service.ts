@@ -9,8 +9,8 @@ export async function consultTaxonomicData(speciesName:string) {
 
         return res;
     } catch (err:any) {
-        console.log(`API erro message` + err.response.statusText +`:`+ err.response.status );
-        return err.response;
+        console.log(`API erro message: ` + err.response.statusText +`:`+ err.response.status );
+        return err.response.status;
         
     }
 }
@@ -18,10 +18,12 @@ export async function consultTaxonomicData(speciesName:string) {
 export async function taxonCleanData(speciesName: string) {
     try {
         const taxonData = await consultTaxonomicData(speciesName);
-
-        let data = taxonData.result;
-        console.log(data);
+        if (taxonData != '404') {
+            let data = taxonData.result;
+            console.log(data);
+        }
     }catch(err: any ) {
+
         throw new Error(err);
     }
 }

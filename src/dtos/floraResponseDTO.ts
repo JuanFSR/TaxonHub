@@ -1,5 +1,5 @@
 import * as typeorm from 'typeorm'
-import { synonymsDTO } from './synonymsDto'
+import { synonymsDTO } from './synonymsDTO'
 
 @typeorm.Entity()
 @typeorm.Unique(['id'])
