@@ -3,6 +3,7 @@ import { consultTaxonomicData } from "../services/flora-brasil.service";
 const { throws } = require("assert");
 const { taxonCleanData } = require("../services/flora-brasil.service");
 
+// Example of a response from the Flora do Brasil API
 let speciesDataTeste = {
     values: [
         {
@@ -144,27 +145,55 @@ let speciesDataTeste = {
     ],
 }
 
-let statusCode: any
+// Not found code
+let notFoundCode: number = 404;
 
+
+// Mock API to execute tests
+async function mockConsultTaxonomicData(speciesName: any) {
+    if (speciesName == null) {
+    return null;
+    }
+    try {
+        if (speciesName == 'Tabernaemontana flavicans Willd. ex Roem. & Schult.') {
+            return speciesDataTeste;
+        }
+        return notFoundCode;
+    } catch {
+        throw new Error('Species name not found');
+    }
+}
+
+// Auxiliar variables
+let statusCode: any;
+let responseApi: any;
+
+// Tests
 describe('Illustrate FDB mocks', () => {
 
     test('Test api connection', async () => {
         statusCode = await consultTaxonomicData('Tabernaemontana flavicans Willd. ex Roem. & Schult.')
-        expect(statusCode).toBe(404)
+        expect(statusCode).toBe(200)
     })
+    
+    test('Searching an existing specie', async () => {
+        responseApi = await mockConsultTaxonomicData('Tabernaemontana flavicans Willd. ex Roem. & Schult.')
+        expect(responseApi).toStrictEqual(speciesDataTeste)
+    })
+    
+    test('Searching a not existing specie', async () => {
+        responseApi = await mockConsultTaxonomicData('Flavicans. ex Roem. & Schult.')
+        expect(responseApi).toStrictEqual(404)
+    })
+
+    test('Searching a not existing specie', async () => {
+        responseApi = await mockConsultTaxonomicData('')
+        expect(responseApi).toStrictEqual(404)
+    })
+
+    test('Searching a not existing specie', async () => {
+        responseApi = await mockConsultTaxonomicData('69')
+        expect(responseApi).toStrictEqual(404)
+    })
+
 })
-
-// Mock API to execute tests
-function mockConsultTaxonomicData(speciesName: any) {
-    if (speciesName != null) {
-        try {
-
-            if (speciesName == 'Tabernaemontana flavicans Willd. ex Roem. & Schult.') {
-                return speciesDataTeste;
-            }
-        } catch {
-            throw new Error('Species name not found');
-        }
-    }
-    return null;
-}
