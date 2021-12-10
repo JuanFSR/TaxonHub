@@ -160,7 +160,7 @@ async function mockConsultTaxonomicData(speciesName: any) {
         }
         return notFoundCode;
     } catch {
-        throw new Error('Species name not found');
+        throw new Error();
     }
 }
 
@@ -171,7 +171,7 @@ let responseApi: any;
 // Tests
 describe('Illustrate FDB mocks', () => {
 
-    test('Test api connection', async () => {
+    test('Testing the real Flora do Brasil API connection', async () => {
         statusCode = await consultTaxonomicData('Tabernaemontana flavicans Willd. ex Roem. & Schult.')
         expect(statusCode).toBe(200)
     })
@@ -186,12 +186,12 @@ describe('Illustrate FDB mocks', () => {
         expect(responseApi).toStrictEqual(404)
     })
 
-    test('Searching a not existing specie', async () => {
+    test('Searching a empty string', async () => {
         responseApi = await mockConsultTaxonomicData('')
         expect(responseApi).toStrictEqual(404)
     })
 
-    test('Searching a not existing specie', async () => {
+    test('Searching a number', async () => {
         responseApi = await mockConsultTaxonomicData('69')
         expect(responseApi).toStrictEqual(404)
     })

@@ -5,11 +5,11 @@ export class synonymsDTO {
     family: string
     genus: string
     scientificname: string
-    "specificepithet": string
-    "infraspecificepithet": string
-    "scientificnameauthorship": string
-    "taxonomicstatus": string
-    "higherclassification": string
-    "source": string
-    "references": string
+    specificepithet: string
+    infraspecificepithet: string
+    scientificnameauthorship: string
+    taxonomicstatus: string
+    higherclassification: string
+    source: string
+    references: string
 }
