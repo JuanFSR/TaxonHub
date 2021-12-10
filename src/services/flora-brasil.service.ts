@@ -15,13 +15,13 @@ export async function consultTaxonomicData(speciesName:string) {
     }
 }
 
-export const taxonCleanData = async (speciesName: string) => {
+export async function taxonCleanData(speciesName: string) {
     try {
         const taxonData = await consultTaxonomicData(speciesName);
 
         let data = taxonData.result;
         console.log(data);
-    } catch (err: any) {
+    }catch(err: any ) {
         throw new Error(err);
     }
 }
