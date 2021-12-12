@@ -1,5 +1,8 @@
 import 'reflect-metadata'
 import { createConnection, Connection } from 'typeorm'
+import { SLEntity } from './entities/SLEntity'
+import { slData } from './services/SLServices'
+
 let _connection: Connection
 export async function connect(databaseTH: string): Promise<any> {
   _connection = await createConnection({
@@ -7,9 +10,12 @@ export async function connect(databaseTH: string): Promise<any> {
     database: databaseTH,
     synchronize: true,
     logging: false,
-    entities: [],
+    entities: [SLEntity],
   })
 }
 export function connected(): boolean {
   return typeof _connection !== undefined
 }
+
+let nameSpecies: string = 'Cedrela%20fissilis';
+slData(nameSpecies);
