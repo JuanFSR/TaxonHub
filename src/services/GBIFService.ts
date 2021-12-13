@@ -16,7 +16,6 @@ export class GBIFService {
     const entity: GBIFSpeciesEntity = result.data
     const Repository = await GBIFSpeciesRepository()
     Repository.save(entity)
-    console.log(result.data)
     return result.data
   }
 
@@ -29,7 +28,6 @@ export class GBIFService {
       },
       timeout: 10000,
     })
-    console.log(result.data)
     return result.data
   }
 
