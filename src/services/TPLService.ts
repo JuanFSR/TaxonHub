@@ -1,4 +1,5 @@
 import axios from 'axios'
+import cheerio from 'cheerio'
 import papaparse from 'papaparse'
 
 export class TPLService {
@@ -41,6 +42,40 @@ export class TPLService {
       }
     } catch (error) {
       throw new Error(`Parsing data error: ${error}`)
+    }
+  }
+
+  static async getLegitimateSpeciesName(synonymSpeciesName: any): Promise<any> {
+    try {
+      const synonymsHtmlPage = await axios.get(`${TPLService.TPLUrl}/tpl1.1/search`, {
+        params: {
+          q: synonymSpeciesName,
+        },
+        timeout: 10000,
+      })
+
+      let $ = cheerio.load(synonymsHtmlPage.data)
+
+      let validSynonym = Object()
+      $('.names.results > tbody > tr > .name.Synonym').each((index, element) => {
+        if (!$(element).text().includes('[Illegitimate]')) {
+          validSynonym = {
+            name: $(element).text(),
+            endpoint: $(element).children().attr('href'),
+          }
+        }
+      })
+
+      const acceptedNameHtmlPage = await axios.get(`${TPLService.TPLUrl}/${validSynonym.endpoint}`, {
+        timeout: 10000,
+      })
+
+      $ = cheerio.load(acceptedNameHtmlPage.data)
+      const acceptedName = $('#columns .subtitle > a > .name').text()
+      console.log(acceptedName)
+      return acceptedName
+    } catch (error) {
+      throw new Error(`Error in getting legitimate species name: ${error}`)
     }
   }
 }
