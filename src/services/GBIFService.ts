@@ -1,7 +1,4 @@
 import axios from 'axios'
-import { GBIFOccurrenceEntity } from '../entities/GBIFOccurrenceEntity'
-import { GBIFSpeciesEntity } from '../entities/GBIFSpeciesEntity'
-import { GBIFSpeciesRepository } from '../repositories/GBIFSpeciesRepository'
 
 export class GBIFService {
   static GBIFUrl = 'http://api.gbif.org/v1'
@@ -15,12 +12,10 @@ export class GBIFService {
       timeout: 10000,
     })
     console.log(result.data)
-    const entity: GBIFSpeciesEntity = result.data
-    GBIFSpeciesRepository.save(entity)
-    return entity
+    return result.data
   }
 
-  static async getOccurrences(taxonKey: string, offset?: number, limit?: number): Promise<any> {
+  static async getOccurrences(taxonKey: number, offset?: number, limit?: number): Promise<any> {
     const result = await axios.get(`${GBIFService.GBIFUrl}/occurrence/search/`, {
       params: {
         taxon_key: taxonKey,
@@ -30,8 +25,6 @@ export class GBIFService {
       timeout: 10000,
     })
     console.log(result.data)
-    const entities: Array<GBIFOccurrenceEntity> = result.data
-    GBIFSpeciesRepository.save(entities)
-    return entities
+    return result.data
   }
 }
