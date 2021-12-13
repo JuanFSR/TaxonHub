@@ -15,4 +15,8 @@ describe('GBIF Service', () => {
     searchData = await GBIFService.getOccurrences(taxonkey, 0, 20)
     expect(searchData).not.toBeUndefined()
   })
+  test('Get Species of GBIF from DB', async () => {
+    const result = await GBIFService.getSpeciesFromDB()
+    expect(result[0]).not.toBeUndefined()
+  })
 })

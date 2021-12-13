@@ -1,4 +1,6 @@
 import axios from 'axios'
+import { GBIFSpeciesEntity } from '../entities/GBIFSpeciesEntity'
+import { GBIFSpeciesRepository } from '../repositories/GBIFSpeciesRepository'
 
 export class GBIFService {
   static GBIFUrl = 'http://api.gbif.org/v1'
@@ -11,6 +13,9 @@ export class GBIFService {
       },
       timeout: 10000,
     })
+    const entity: GBIFSpeciesEntity = result.data
+    const Repository = await GBIFSpeciesRepository()
+    Repository.save(entity)
     console.log(result.data)
     return result.data
   }
@@ -26,5 +31,10 @@ export class GBIFService {
     })
     console.log(result.data)
     return result.data
+  }
+
+  static async getSpeciesFromDB(): Promise<[GBIFSpeciesEntity[], number]> {
+    const Repository = await GBIFSpeciesRepository()
+    return Repository.findAndCount()
   }
 }

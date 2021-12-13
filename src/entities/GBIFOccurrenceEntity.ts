@@ -30,10 +30,10 @@ export class GBIFOccurrenceEntity {
   protocol: string
 
   @typeorm.Column()
-  lastCrawled: Date
+  lastCrawled: string
 
   @typeorm.Column()
-  lastParsed: Date
+  lastParsed: string
 
   @typeorm.Column()
   crawlId: number
@@ -66,7 +66,7 @@ export class GBIFOccurrenceEntity {
   taxonRank: string
 
   @typeorm.Column()
-  dateIdentified: Date
+  stringIdentified: string
 
   @typeorm.Column()
   decimalLongitude: number
@@ -87,17 +87,17 @@ export class GBIFOccurrenceEntity {
   day: number
 
   @typeorm.Column()
-  eventDate: Date
+  eventstring: string
 
   // ! verificar qual de fato é o tipo (string mesmo?)
   @typeorm.Column('simple-array')
   issues: Array<string>
 
   @typeorm.Column()
-  modified: Date
+  modified: string
 
   @typeorm.Column()
-  lastInterpreted: Date
+  lastInterpreted: string
 
   @typeorm.Column()
   references: string
@@ -151,7 +151,7 @@ export class GBIFOccurrenceEntity {
   'http://unknown.org/nick': string
 
   @typeorm.Column()
-  verbatimEventDate: string
+  verbatimEventstring: string
 
   @typeorm.Column()
   datasetName: string
@@ -194,5 +194,5 @@ export class GBIFOccurrenceEntity {
   createdAt: string
 
   @typeorm.UpdateDateColumn({ type: 'timestamp with time zone', default: () => 'CURRENT_TIMESTAMP', update: true })
-  updatedAt: string
+  upstringdAt: string
 }

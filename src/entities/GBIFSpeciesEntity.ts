@@ -69,9 +69,9 @@ export class GBIFSpeciesEntity {
   @typeorm.Column()
   class: string
 
-  @typeorm.CreateDateColumn({ type: 'timestamp with time zone', default: () => 'CURRENT_TIMESTAMP' })
-  createdAt: string
+  // @typeorm.CreateDateColumn({ type: 'timestamp with time zone', default: () => 'CURRENT_TIMESTAMP' })
+  // createdAt: string
 
-  @typeorm.UpdateDateColumn({ type: 'timestamp with time zone', default: () => 'CURRENT_TIMESTAMP', update: true })
-  updatedAt: string
+  // @typeorm.UpdateDateColumn({ type: 'timestamp with time zone', default: () => 'CURRENT_TIMESTAMP', update: true })
+  // updatedAt: string
 }
