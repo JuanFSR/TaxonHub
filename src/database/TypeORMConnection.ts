@@ -1,5 +1,6 @@
 import 'reflect-metadata'
 import { Connection, ConnectionManager, ConnectionOptions, createConnection, getConnectionManager } from 'typeorm'
+import { TPLSpeciesEntity } from '../entities/TPLSpeciesEntity'
 
 export class Database {
   private connectionManager: ConnectionManager
@@ -22,9 +23,9 @@ export class Database {
         name: 'default',
         type: 'sqlite',
         database: 'taxonHub',
-        synchronize: false,
+        synchronize: true,
         logging: false,
-        entities: [],
+        entities: [TPLSpeciesEntity],
       }
       connection = await createConnection(connectionOptions)
     }

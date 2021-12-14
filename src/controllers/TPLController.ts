@@ -20,7 +20,7 @@ export class TPLController {
           }
         }
 
-        const resultSearch = parsedData.map((searchRow: any) => searchRow)
+        const resultSearch = await TPLService.saveDataOnDB(parsedData)
 
         return resultSearch
       } catch (error) {
