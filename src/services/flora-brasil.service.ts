@@ -1,4 +1,6 @@
 import axios from 'axios';
+import { FloraResponseDTO } from '../dtos/floraResponseDTO';
+import { floraBrasilRepository } from '../repositories/FloraBrasilRepository';
 
 export async function consultTaxonomicData(speciesName:string) {
     try {
@@ -16,8 +18,10 @@ export async function consultTaxonomicData(speciesName:string) {
 }
 
 export async function taxonCleanData(speciesName: string) {
+    let taxonData
     try {
-        const taxonData = await consultTaxonomicData(speciesName);
+        taxonData = await consultTaxonomicData(speciesName);
+        return taxonData
         if (taxonData != '404') {
             let data = taxonData.result;
             console.log(data);
@@ -26,4 +30,9 @@ export async function taxonCleanData(speciesName: string) {
 
         throw new Error(err);
     }
+    const entity: FloraResponseDTO = taxonData
+    const floraRepository = await floraBrasilRepository()
+    floraRepository.save(entity)
+    
+
 }
