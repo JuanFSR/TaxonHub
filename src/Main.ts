@@ -19,3 +19,4 @@ let nameSpecies: string = 'Eichhornia%20azurea';
 
 // Execute request to the Flora do Brasil API
 consultTaxonomicData(nameSpecies);
+console.log('Running')
