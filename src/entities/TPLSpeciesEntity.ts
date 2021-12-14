@@ -2,7 +2,6 @@ import * as typeorm from 'typeorm'
 import { TPLSpeciesDTO } from '../dtos/TPLSpeciesDTO'
 
 @typeorm.Entity()
-@typeorm.Unique(['ID'])
 export class TPLSpeciesEntity {
   constructor(speciesDTO: TPLSpeciesDTO) {
     if (speciesDTO) {
@@ -42,57 +41,57 @@ export class TPLSpeciesEntity {
   @typeorm.Column()
   Family: string
 
-  @typeorm.Column()
+  @typeorm.Column({ nullable: true })
   GenusHybridMarker: string
 
   @typeorm.Column()
   Genus: string
 
-  @typeorm.Column()
+  @typeorm.Column({ nullable: true })
   SpeciesHybridMarker: string
 
   @typeorm.Column()
   Species: string
 
-  @typeorm.Column()
+  @typeorm.Column({ nullable: true })
   InfraspecificRank: string
 
-  @typeorm.Column()
+  @typeorm.Column({ nullable: true })
   InfraspecificEpithet: string
 
-  @typeorm.Column()
+  @typeorm.Column({ nullable: true })
   Authorship: string
 
   @typeorm.Column()
   TaxonomicStatusinTPL: string
 
-  @typeorm.Column()
+  @typeorm.Column({ nullable: true })
   NomenclaturalStatusFromOriginalDataSource: string
 
-  @typeorm.Column()
+  @typeorm.Column({ nullable: true })
   ConfidenceLevel: string
 
-  @typeorm.Column()
+  @typeorm.Column({ nullable: true })
   Source: string
 
-  @typeorm.Column()
+  @typeorm.Column({ nullable: true })
   SourceId: number
 
-  @typeorm.Column()
+  @typeorm.Column({ nullable: true })
   INPIId: string
 
-  @typeorm.Column()
+  @typeorm.Column({ nullable: true })
   Publication: string
 
-  @typeorm.Column()
+  @typeorm.Column({ nullable: true })
   Collation: number
 
-  @typeorm.Column()
+  @typeorm.Column({ nullable: true })
   Page: number
 
-  @typeorm.Column()
+  @typeorm.Column({ nullable: true })
   Date: number
 
-  @typeorm.Column()
+  @typeorm.Column({ nullable: true })
   AcceptedId: string
 }
