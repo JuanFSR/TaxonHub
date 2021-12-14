@@ -88,4 +88,10 @@ export class TPLService {
       throw new Error(`Error in getting legitimate species name: ${error}`)
     }
   }
+
+  static async listSpeciesFromFB(): Promise<[TPLSpeciesEntity[], number]> {
+    const Repository = await TPLSpeciesRepository()
+    const result = await Repository.findAndCount()
+    return result
+  }
 }

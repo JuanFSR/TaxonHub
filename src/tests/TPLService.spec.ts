@@ -20,4 +20,8 @@ describe('TPL Service', () => {
     legitimateData = await TPLService.getLegitimateSpeciesName('Pontederia azurea (Sw.)')
     expect(legitimateData).not.toBeUndefined()
   })
+  test('Get species of TPL from DB', async () => {
+    const result = TPLService.listSpeciesFromFB()
+    expect(result).not.toBeUndefined()
+  })
 })
