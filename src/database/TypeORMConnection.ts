@@ -22,7 +22,7 @@ export class Database {
         name: 'default',
         type: 'sqlite',
         database: 'taxonHub',
-        synchronize: false,
+        synchronize: true,
         logging: false,
         entities: [],
       }
